@@ -1,0 +1,313 @@
+.page {
+  --ink: #282b35;
+  --muted: #7b8295;
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #f3f4f8;
+}
+
+.splashScreen,
+.signInScreen {
+  position: absolute;
+  inset: 0;
+  min-height: 100dvh;
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.splashScreen {
+  z-index: 2;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.signInScreen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  opacity: 0;
+  transform: translateX(18px);
+}
+
+.page[data-screen="signin"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="signin"] .signInScreen,
+.page[data-screen="two-factor"] .signInScreen,
+.page[data-screen="success"] .signInScreen,
+.page[data-screen="forgot-password"] .signInScreen,
+.page[data-screen="verify-email"] .signInScreen,
+.page[data-screen="reset-password"] .signInScreen,
+.page[data-screen="reset-success"] .signInScreen {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page[data-screen="two-factor"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="success"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="forgot-password"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="verify-email"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="reset-password"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.page[data-screen="reset-success"] .splashScreen {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.015);
+}
+
+.splashImage,
+.brandPanelImage {
+  object-fit: cover;
+}
+
+.brandPanel {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.brandPanelImage {
+  object-position: center;
+  filter: saturate(0.72) brightness(0.72);
+}
+
+.brandPanelShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 24, 30, 0.25), rgba(14, 17, 22, 0.64));
+}
+
+.panelLogo {
+  position: absolute;
+  top: 31px;
+  left: 38px;
+}
+
+.brandMessage {
+  position: absolute;
+  right: 12%;
+  bottom: 31%;
+  left: 22%;
+  max-width: 410px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.brandMessage h1 {
+  max-width: 330px;
+  white-space: pre-line;
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.brandDescription {
+  max-width: 320px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.metrics {
+  display: flex;
+  gap: clamp(24px, 4vw, 52px);
+  margin-top: 23px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metric strong {
+  color: #bd63ff;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.metric span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 8px;
+}
+
+.formPanel {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: 24px;
+  background: #f3f4f8;
+}
+
+.formCard {
+  width: min(100%, 310px);
+  padding: 29px 25px 25px;
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(36, 43, 59, 0.04);
+}
+
+.formLogo {
+  margin: 0 auto 21px;
+  transform: scale(0.84);
+  transform-origin: top center;
+}
+
+.formHeading h2 {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.formHeading p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 19px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--ink);
+  font-size: 7px;
+}
+
+.field input {
+  width: 100%;
+  height: 27px;
+  border: 1px solid #e7e8ed;
+  border-radius: 2px;
+  outline: none;
+  padding: 0 8px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+  font-size: 8px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field input::placeholder {
+  color: #a8adba;
+}
+
+.field input:focus {
+  border-color: #a974dd;
+  box-shadow: 0 0 0 2px rgba(169, 116, 221, 0.12);
+}
+
+.passwordControl {
+  position: relative;
+}
+
+.passwordControl input {
+  padding-right: 27px;
+}
+
+.formOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -1px;
+  color: #959baa;
+  font-size: 7px;
+}
+
+.rememberMe {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.rememberMe input {
+  width: 9px;
+  height: 9px;
+  margin: 0;
+  accent-color: #2b2e38;
+}
+
+.formOptions a {
+  color: #a04cf2;
+}
+
+@media (max-width: 760px) {
+  .signInScreen {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .brandPanel {
+    min-height: 48dvh;
+  }
+
+  .brandMessage {
+    right: 24px;
+    bottom: 34px;
+    left: 24px;
+  }
+
+  .brandMessage h1 {
+    font-size: clamp(26px, 8vw, 40px);
+  }
+
+  .formPanel {
+    min-height: 52dvh;
+    padding: 32px 20px;
+  }
+
+  .formCard {
+    width: min(100%, 330px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splashScreen,
+  .signInScreen {
+    transition: none;
+  }
+}

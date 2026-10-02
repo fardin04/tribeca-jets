@@ -1,0 +1,38 @@
+.button {
+  min-height: 30px;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 14px;
+  color: #ffffff;
+  background: #262933;
+  font: inherit;
+  font-size: 7px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  background: #171922;
+}
+
+.button:active {
+  transform: scale(0.985);
+}
+
+.text {
+  min-height: auto;
+  padding: 0;
+  color: #858894;
+  background: transparent;
+  font-size: 8px;
+}
+
+.text:hover {
+  color: #282b35;
+  background: transparent;
+}
+
+.text:active {
+  transform: none;
+}
